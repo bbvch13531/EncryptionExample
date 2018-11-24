@@ -1,3 +1,5 @@
+package client;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -12,35 +14,35 @@ public class TCPclient {
     public static void main(String[] args) 
     {
         try{
-            String ip = "39.115.19.133"; //Á¢¼Ó ÁÖ¼Ò
-            int port = 5432; //Á¢¼ÓÇÒ ¼­¹ö Æ÷Æ®
-            Socket socket = new Socket(ip, port); //Å¬¶óÀÌ¾ðÆ®ÀÇ ¼ÒÄÏ »ý¼º
+            String ip = "39.115.19.133"; //ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½
+            int port = 5432; //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®
+            Socket socket = new Socket(ip, port); //Å¬ï¿½ï¿½ï¿½Ì¾ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
             
-            OutputStream out = socket.getOutputStream(); //¼­¹öÀÇ ¼ÒÄÏÀ¸·ÎºÎÅÍ Ãâ·ÂÀ» ¹ÞÀ½
-            InputStream in = socket.getInputStream(); //¼­¹öÀÇ ¼ÒÄÏÀ¸·ÎºÎÅÍ ÀÔ·ÂÀ» ¹ÞÀ½
+            OutputStream out = socket.getOutputStream(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            InputStream in = socket.getInputStream(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îºï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
              
-            PrintWriter pw = new PrintWriter(new OutputStreamWriter(out)); //Ãâ·Â ½ºÆ®¸²À» º¯È¯
-            BufferedReader br = new BufferedReader(new InputStreamReader(in)); //ÀÔ·Â ½ºÆ®¸²À» º¯È¯
+            PrintWriter pw = new PrintWriter(new OutputStreamWriter(out)); //ï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
+            BufferedReader br = new BufferedReader(new InputStreamReader(in)); //ï¿½Ô·ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯
 
-            String myMsg = null; //Àü´Þ ¸Þ½ÃÁö
+            String myMsg = null; //ï¿½ï¿½ï¿½ï¿½ ï¿½Þ½ï¿½ï¿½ï¿½
             
             
             AES256Util256 aes256 = new AES256Util256("1234567890123111456");
     		MD5_hash md5 = new MD5_hash();
     		
-            myMsg = "20000000"; //ÇÐ¹ø
+            myMsg = "20000000"; //ï¿½Ð¹ï¿½
             String Enctext = aes256.aesEncode(myMsg);
     		String hash = md5.testMD5(Enctext);;
     		
-    		pw.println(myMsg); //PrintWriter¸¦ ÀÌ¿ëÇÏ¿© ¼­¹ö¿¡°Ô Àü´Þ
-            pw.flush(); //¹öÆÛ ºñ¿ì±â
+    		pw.println(myMsg); //PrintWriterï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            pw.flush(); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     		
-            pw.println(Enctext); //PrintWriter¸¦ ÀÌ¿ëÇÏ¿© ¼­¹ö¿¡°Ô Àü´Þ
-            pw.flush(); //¹öÆÛ ºñ¿ì±â
+            pw.println(Enctext); //PrintWriterï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            pw.flush(); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             
-            pw.println(hash); //PrintWriter¸¦ ÀÌ¿ëÇÏ¿© ¼­¹ö¿¡°Ô Àü´Þ
-            pw.flush(); //¹öÆÛ ºñ¿ì±â
+            pw.println(hash); //PrintWriterï¿½ï¿½ ï¿½Ì¿ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+            pw.flush(); //ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
                         
             pw.close();
             br.close();

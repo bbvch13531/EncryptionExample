@@ -1,3 +1,5 @@
+package client;
+
 import java.io.UnsupportedEncodingException;
 import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
@@ -33,7 +35,7 @@ class AES256Util256 {
     }
     
  
-    // ��ȣȭ
+    // ��ȣȭ
     public String aesEncode(String str) throws java.io.UnsupportedEncodingException, 
                                                     NoSuchAlgorithmException, 
                                                     NoSuchPaddingException, 
@@ -50,7 +52,7 @@ class AES256Util256 {
         return enStr;
     }
  
-    //��ȣȭ
+    //��ȣȭ
     public String aesDecode(String str) throws java.io.UnsupportedEncodingException,
                                                         NoSuchAlgorithmException,
                                                         NoSuchPaddingException, 

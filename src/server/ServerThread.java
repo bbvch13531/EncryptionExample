@@ -1,3 +1,5 @@
+package server;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,7 +13,7 @@ public class ServerThread extends Thread
 	private Socket socket;
 	private BufferedReader br = null;
 	private PrintWriter pw = null;
-	private String userIP = "Á¢¼ÓÀÚ";
+	private String userIP = "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½";
 
 	ServerThread(Socket s)
 	{
@@ -26,7 +28,7 @@ public class ServerThread extends Thread
 		}
 		catch(IOException e)
 		{
-			System.out.println("**"+userIP+"´Ô Á¢¼Ó Á¾·á.");
+			System.out.println("**"+userIP+"ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.");
 		}
 		finally
 		{
@@ -51,10 +53,10 @@ public class ServerThread extends Thread
 			str = br.readLine();
 			if(str == null)
 			{
-				System.out.println(userIP+"´ÔÀÌ ¿¬°áÀ» Á¾·áÇß½À´Ï´Ù.");
+				System.out.println(userIP+"ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½Ï´ï¿½.");
 				break;
 			}
-			System.out.println(socket.getInetAddress()+"´Ô: "+str);
+			System.out.println(socket.getInetAddress()+"ï¿½ï¿½: "+str);
 			pw.println(str);
 		}
 	}

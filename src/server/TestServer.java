@@ -1,3 +1,5 @@
+package server;
+
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -12,14 +14,14 @@ public class TestServer{
 		try
 		{
 			ss = new ServerSocket(5432);
-			System.out.println("**¼­¹ö ½ÇÇà**");
+			System.out.println("**ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½**");
 
 			while(true)
 			{
 				s = ss.accept(); 
 				ServerThread st = new ServerThread(s);
 				st.start(); 
-				System.out.println(s.getInetAddress()+"Á¢¼Ó");
+				System.out.println(s.getInetAddress()+"ï¿½ï¿½ï¿½ï¿½");
 			}
 		}
 		finally
@@ -28,7 +30,7 @@ public class TestServer{
 			s.close();
 			if (ss != null)
 			ss.close();
-			System.out.println("**¼­¹ö Á¾·á**");   
+			System.out.println("**ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½**");   
 		}
 	}
 
