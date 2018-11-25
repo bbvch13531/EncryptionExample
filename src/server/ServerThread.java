@@ -13,7 +13,7 @@ public class ServerThread extends Thread
 	private Socket socket;
 	private BufferedReader br = null;
 	private PrintWriter pw = null;
-	private String userIP = "������";
+	private String userIP = "접속자";
 
 	ServerThread(Socket s)
 	{
@@ -28,7 +28,7 @@ public class ServerThread extends Thread
 		}
 		catch(IOException e)
 		{
-			System.out.println("**"+userIP+"�� ���� ����.");
+			System.out.println("**"+userIP+"님 접속 종.");
 		}
 		finally
 		{
@@ -53,10 +53,10 @@ public class ServerThread extends Thread
 			str = br.readLine();
 			if(str == null)
 			{
-				System.out.println(userIP+"���� ������ �����߽��ϴ�.");
+				System.out.println(userIP+"님이 연결을 종료했습니다.");
 				break;
 			}
-			System.out.println(socket.getInetAddress()+"��: "+str);
+			System.out.println(socket.getInetAddress()+"님: "+str);
 			pw.println(str);
 		}
 	}

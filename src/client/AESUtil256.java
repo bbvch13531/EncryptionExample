@@ -35,7 +35,7 @@ class AES256Util256 {
     }
     
  
-    // ��ȣȭ
+    // 암호화
     public String aesEncode(String str) throws java.io.UnsupportedEncodingException, 
                                                     NoSuchAlgorithmException, 
                                                     NoSuchPaddingException, 
@@ -52,7 +52,7 @@ class AES256Util256 {
         return enStr;
     }
  
-    //��ȣȭ
+    // 복호화
     public String aesDecode(String str) throws java.io.UnsupportedEncodingException,
                                                         NoSuchAlgorithmException,
                                                         NoSuchPaddingException, 

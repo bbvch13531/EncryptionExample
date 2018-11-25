@@ -14,14 +14,14 @@ public class TestServer{
 		try
 		{
 			ss = new ServerSocket(5432);
-			System.out.println("**���� ����**");
+			System.out.println("**서버 실행**");
 
 			while(true)
 			{
 				s = ss.accept(); 
 				ServerThread st = new ServerThread(s);
 				st.start(); 
-				System.out.println(s.getInetAddress()+"����");
+				System.out.println(s.getInetAddress()+"접속");
 			}
 		}
 		finally
@@ -30,7 +30,7 @@ public class TestServer{
 			s.close();
 			if (ss != null)
 			ss.close();
-			System.out.println("**���� ����**");   
+			System.out.println("**서버 종료**");
 		}
 	}
 
